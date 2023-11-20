@@ -18,9 +18,7 @@ jobs:
           key: pacman-cache-${{ github.workflow }}-build
 
       - name: Install dependencies
-        run: |
-          pacman -Syyu --noconfirm
-          pacman -S --needed --noconfirm archiso git
+        run: pacman -Syyu --needed --noconfirm archiso git
 
       - name: Checkout
         uses: actions/checkout@v4
