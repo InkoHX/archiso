@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: Create ISO image
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:base-devel
+    steps:
+      - name: Setup
+        run: |
+          pacman -Syyu --noconfirm
+          pacman -S --noconfirm archiso git edk2-ovmf qemu-desktop
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make ISO
+        run: |
+          mkarchiso -v -w ./work -o out ./out ./config
+          ls -R ./out
+
+      #- name: Testing ISO
+      #  run: run_archiso -u -i /out/
