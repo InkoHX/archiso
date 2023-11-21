@@ -29,4 +29,5 @@ jobs:
       - name: Upload ISO
         uses: actions/upload-artifact@v3
         with:
+          name: archlinux-x86_64.iso
           path: ./out/*.iso
