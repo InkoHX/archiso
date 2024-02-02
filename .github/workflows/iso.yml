@@ -4,17 +4,17 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '0 0 1 * *'
+    - cron: "0 0 1 * *"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: archlinux:base-devel
+      image: archlinux:base
       options: --privileged
     steps:
       - name: Restore pacman cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: /var/cache/pacman/pkg
           key: pacman-cache-${{ github.workflow }}-build
@@ -29,7 +29,7 @@ jobs:
         run: mkarchiso -v -o ./out ./config
 
       - name: Upload ISO
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: iso-files
           path: ./out/*.iso
