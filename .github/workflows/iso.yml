@@ -9,11 +9,6 @@ on:
         description: "Create a release"
         type: boolean
         default: false
-      tag-name:
-        description: "Tag name"
-        required: false
-        type: string
-        default:
   schedule:
     - cron: "0 0 1 * *"
 
