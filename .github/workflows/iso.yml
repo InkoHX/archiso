@@ -65,8 +65,6 @@ jobs:
         uses: softprops/action-gh-release@v2.0.5
         with:
           files: ./out/*.iso
-          token: ${{ secrets.GITHUB_TOKEN }}
           name: ${{ steps.release-info.outputs.date }}
-          target_commitish: ${{ github.sha }}
-          draft: ${{ github.event_name == 'schedule' }}
-          prerelease: false
+          tag_name: ${{ steps.release-info.outputs.date }}
+          draft: ${{ github.event_name != 'schedule' }}
