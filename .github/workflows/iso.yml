@@ -62,7 +62,7 @@ jobs:
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2.0.7
+        uses: softprops/action-gh-release@v2.0.8
         with:
           files: ./out/*.iso
           name: ${{ steps.release-info.outputs.date }}
