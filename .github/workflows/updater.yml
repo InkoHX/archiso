@@ -1,0 +1,26 @@
+name: Updater
+
+on:
+  schedule:
+    - cron: "0 0 * */1 1"
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download config from https://gitlab.archlinux.org/archlinux/archiso
+        run: ./scripts/fetch-releng-config.sh
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ./releng
+          git commit -m "Fetch latest config from https://gitlab.archlinux.org/archlinux/archiso" || true

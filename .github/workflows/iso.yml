@@ -14,6 +14,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     container:
       image: archlinux:base
@@ -26,13 +27,16 @@ jobs:
           key: pacman-cache-${{ github.workflow }}-build
 
       - name: Install dependencies
-        run: pacman -Syyu --needed --noconfirm archiso
+        run: pacman -Syyu --needed --noconfirm archiso git
 
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Apply patches
+        run: ./scripts/apply-patches.sh
+
       - name: Build ISO
-        run: mkarchiso -v -o ./out ./config
+        run: mkarchiso -v -o ./out ./releng
 
       - name: Upload ISO
         uses: actions/upload-artifact@v4

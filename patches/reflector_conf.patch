@@ -1,0 +1,12 @@
+diff --git a/releng/airootfs/etc/xdg/reflector/reflector.conf b/releng/airootfs/etc/xdg/reflector/reflector.conf
+index 7c830d2..c0308bc 100644
+--- a/releng/airootfs/etc/xdg/reflector/reflector.conf
++++ b/releng/airootfs/etc/xdg/reflector/reflector.conf
+@@ -4,5 +4,6 @@
+ --ipv4
+ --ipv6
+ --protocol https
+---latest 20
++--latest 5
+ --sort rate
++--country Japan

@@ -1,0 +1,7 @@
+diff --git a/releng/airootfs/etc/modprobe.d/disable-pcspkr.conf b/releng/airootfs/etc/modprobe.d/disable-pcspkr.conf
+new file mode 100644
+index 0000000..b46792e
+--- /dev/null
++++ b/releng/airootfs/etc/modprobe.d/disable-pcspkr.conf
+@@ -0,0 +1 @@
++blacklist pcspkr

@@ -1,0 +1,9 @@
+diff --git a/releng/airootfs/etc/localtime b/releng/airootfs/etc/localtime
+index 0e35b57..9717924 120000
+--- a/releng/airootfs/etc/localtime
++++ b/releng/airootfs/etc/localtime
+@@ -1 +1 @@
+-/usr/share/zoneinfo/UTC
+\ No newline at end of file
++/usr/share/zoneinfo/Asia/Tokyo
+\ No newline at end of file

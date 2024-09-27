@@ -1,0 +1,7 @@
+diff --git a/releng/airootfs/vconsole.conf b/releng/airootfs/vconsole.conf
+new file mode 100644
+index 0000000..98702d1
+--- /dev/null
++++ b/releng/airootfs/vconsole.conf
+@@ -0,0 +1 @@
++keymap=jp106
