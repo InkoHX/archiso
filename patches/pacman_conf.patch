@@ -1,5 +1,5 @@
 diff --git a/releng/pacman.conf b/releng/pacman.conf
-index 5abd8bb..8db20c5 100644
+index e7e6497..5a30d87 100644
 --- a/releng/pacman.conf
 +++ b/releng/pacman.conf
 @@ -30,7 +30,7 @@ Architecture = auto
@@ -13,7 +13,7 @@ index 5abd8bb..8db20c5 100644
  #CheckSpace
 @@ -38,6 +38,7 @@ Architecture = auto
  ParallelDownloads = 5
- DownloadUser = alpm
+ #DownloadUser = alpm
  #DisableSandbox
 +ILoveCandy
  
