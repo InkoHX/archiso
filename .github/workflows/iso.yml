@@ -30,7 +30,7 @@ jobs:
         run: pacman -Syyu --needed --noconfirm archiso git
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Apply patches
         run: ./scripts/apply-patches.sh
@@ -53,7 +53,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Download ISO
         uses: actions/download-artifact@v8
