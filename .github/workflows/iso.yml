@@ -17,7 +17,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     container:
-      image: archlinux:base@sha256:4bf33b21a715aac0b48ce6e9eaed4782a898eae96f88f5da3635572129c2584a
+      image: archlinux:base@sha256:b944cc65c5f28665dfd5fdbf5ed2997c88f5bb4a0aefac7ee8a7ef01893e5ed9
       options: --privileged
     steps:
       - name: Restore pacman cache
